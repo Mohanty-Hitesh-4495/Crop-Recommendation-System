@@ -1,0 +1,5 @@
+streamlit==1.24.0      # For creating the web interface
+pandas==1.5.3          # For data handling
+numpy==1.24.2          # For numerical operations
+scikit-learn==1.2.1    # For machine learning models
+matplotlib==3.7.1      # For data visualization 
