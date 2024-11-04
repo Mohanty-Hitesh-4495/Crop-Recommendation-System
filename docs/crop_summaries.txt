@@ -1,0 +1,27 @@
+Wheat: A staple food crop that thrives in moderate temperatures and well-drained, fertile soil with a neutral pH. Adequate moisture is essential during flowering and grain filling.
+Rice: A crucial food crop that flourishes in warm, humid climates and requires plenty of water. It grows well in clayey soils and needs adequate nitrogen and phosphorus.
+Corn (Maize): Requires rich, well-drained soil and thrives in warm climates (20-30°C). Consistent moisture is critical during the tasseling and silking stages for optimal growth.
+Barley: A hardy cereal crop that grows in various climates, requiring less water. It prefers well-drained soils and optimal temperatures between 10-20°C.
+Cotton: Thrives in warm climates (21-30°C) with well-drained soils and moderate rainfall. Nutrient-rich soil with adequate nitrogen and potassium is essential for high-quality fibers.
+Soybean: A nitrogen-fixing legume that grows well in warm, well-drained soils. It enriches the soil by fixing atmospheric nitrogen and requires moderate rainfall.
+Sugarcane: Thrives in tropical climates with warm temperatures (20-32°C) and abundant moisture. It requires fertile soil and proper irrigation, especially during the dry season.
+Millet: A drought-resistant cereal that grows well in arid regions and poor, sandy soils. It requires minimal water and thrives in temperatures between 25-30°C.
+Chickpea: Drought-resistant legumes that grow in warm, dry climates (20-30°C). They enrich the soil with nitrogen and require moderate rainfall, thriving in well-drained soils.
+Banana: Thrives in tropical climates with rich, well-drained soil and high humidity. Requires ample rainfall (1500-2000 mm) and is sensitive to wind.
+Grapes: Prefer warm, temperate climates and well-drained, organic-rich soil. They thrive in full sunlight and require moderate water, sensitive to waterlogging.
+Watermelon: Needs warm temperatures (20-30°C) and sandy, well-drained soil for sweet fruit. Requires ample water and benefits from consistent moisture during flowering.
+Muskmelon: Thrives in warm weather (20-30°C) with well-drained, organic-rich soil. Requires moderate water, particularly during flowering and fruiting.
+Apple: Requires a temperate climate with distinct seasons and well-drained, fertile soil. Thrives in full sun with moderate to high rainfall for optimal fruit quality.
+Papaya: Grows well in tropical climates (20-30°C) with rich, well-drained soil and high humidity. Requires consistent moisture and fertilization for better fruit quality.
+Kidney Beans: Thrive in warm temperatures (20-30°C) and well-drained soil, benefiting from high nitrogen levels. Require moderate rainfall and should be planted after the last frost.
+Pigeon Peas: Drought-tolerant legumes that thrive in tropical climates. They prefer well-drained, sandy soils and require full sun and moderate rainfall.
+Moth Beans: Drought-resistant legumes that grow in arid conditions and prefer sandy, well-drained soils. They benefit from full sun and help improve soil health.
+Mung Beans: Fast-growing legumes thriving in warm weather (25-35°C) with well-drained soil. They help enrich the soil with nitrogen and require moderate rainfall.
+Black Gram: Grows well in warm climates (20-30°C) and improves soil fertility. Prefers well-drained soils and requires moderate rainfall, sensitive to waterlogging.
+Lentil: Thrives in cool climates with well-drained, organic-rich soil. Requires moderate rainfall and full sun exposure, sensitive to frost.
+Pomegranate: Prefers warm, dry climates and well-drained soil. They are drought-tolerant once established and benefit from full sun and moderate rainfall.
+Mango: Thrives in tropical climates with well-drained soil and plenty of sunlight. Sensitive to frost and requires well-aerated soil to prevent root diseases.
+Orange: Prefers subtropical to tropical climates and well-drained, organic-rich soil. Requires full sun and moderate rainfall for optimal growth.
+Coconut: Thrives in sandy, well-drained soils and warm coastal areas with ample rainfall. Requires full sun and is sensitive to strong winds.
+Jute: A tropical plant that requires warm temperatures and high humidity for optimal growth. Typically grown during the monsoon season, requiring moderate rainfall.
+Coffee: Prefers tropical climates with rich, well-drained soil and moderate rainfall. Thrives in shaded areas and requires consistent moisture for high-quality beans.
