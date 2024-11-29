@@ -159,3 +159,89 @@ graph TD
 
     FertModel -->|"Fetch Data"| Database
 ```
+```mermaid
+graph TD
+    extEntity[["Farmer (External Entity)"]] -->|Inputs: Soil, Crop, Environment Data| process0(("Crop Recommendation System"))
+    process0 -->|Outputs: Recommended Crop, Fertilizer, Statistical Insights| extEntity
+```
+```mermaid
+graph TD
+    subgraph System["Crop Recommendation System"]
+        process1(("Crop Recommendation"))
+        process2(("Fertilizer Recommendation"))
+        process3(("Statistical Analysis"))
+        datastore1[["Soil & Crop Data (Data Store)"]]
+    end
+
+    extEntity[["Farmer (External Entity)"]] -->|Soil & Environmental Data| process1
+    extEntity -->|Soil & Crop Data| process2
+    extEntity -->|Request for Analysis| process3
+
+    process1 -->|Recommended Crop| extEntity
+    process2 -->|Recommended Fertilizer| extEntity
+    process3 -->|Statistical Graphs| extEntity
+
+    process1 -->|Access Data| datastore1
+    process2 -->|Access Data| datastore1
+    process3 -->|Access Data| datastore1
+```
+```mermaid
+graph TD
+    subgraph CropRecommendationProcess["Crop Recommendation Process"]
+        subproc1(("Data Collection"))
+        subproc2(("Prediction Model"))
+        datastoreCrop[["Crop Data"]]
+    end
+
+    subproc1 -->|Process Data| subproc2
+    subproc2 -->|Recommended Crop| outputCrop[["Output"]]
+    subproc1 -->|Access Data| datastoreCrop
+```
+```mermaid
+graph TD
+    subgraph CropRecommendationProcess["Crop Recommendation Process"]
+        subproc1(("Data Collection"))
+        subproc2(("Prediction Model"))
+        datastoreCrop[["Crop Data"]]
+    end
+
+    subproc1 -->|Process Data| subproc2
+    subproc2 -->|Recommended Crop| outputCrop[["Output"]]
+    subproc1 -->|Access Data| datastoreCrop
+```
+```mermaid
+graph TD
+    subgraph CropRecommendationProcess["Crop Recommendation Process"]
+        subproc1(("Data Collection"))
+        subproc2(("Prediction Model"))
+        datastoreCrop[["Crop Data"]]
+    end
+
+    subproc1 -->|Process Data| subproc2
+    subproc2 -->|Recommended Crop| outputCrop[["Output"]]
+    subproc1 -->|Access Data| datastoreCrop
+```
+```mermaid
+graph TD
+    subgraph FertilizerRecommendationProcess["Fertilizer Recommendation Process"]
+        subproc1(("Data Collection"))
+        subproc2(("Prediction Model"))
+        datastoreFert[["Fertilizer Data"]]
+    end
+
+    subproc1 -->|Process Data| subproc2
+    subproc2 -->|Recommended Fertilizer| outputFert[["Output"]]
+    subproc1 -->|Access Data| datastoreFert
+```
+```mermaid
+graph TD
+    subgraph StatisticalAnalysisProcess["Statistical Analysis Process"]
+        subproc1(("Data Extraction"))
+        subproc2(("Analysis and Insights"))
+        datastoreStat[["Statistical Data"]]
+    end
+
+    subproc1 -->|Prepare Data| subproc2
+    subproc2 -->|Statistical Graphs| outputGraphs[["Output"]]
+    subproc1 -->|Access Data| datastoreStat
+```
