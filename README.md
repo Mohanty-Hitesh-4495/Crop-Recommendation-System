@@ -20,3 +20,19 @@ Upcoming Features:
 - Integration of pesticide recommendation and disease detection.
 - Expansion of the knowledge base with pest and disease libraries.
 - Scalability for additional features like irrigation suggestions.
+
+## How to Run 🛠️
+#### 1. Clone the repository:
+```bash
+git clone https://github.com/Mohanty-Hitesh-4495/Crop-Recommendation-System.git
+```
+#### 2. Install the required dependencies from requirements.txt.
+bash
+```
+pip install -r requirements.txt
+```
+#### 3. Run the Streamlit application:
+bash
+```
+streamlit run app.py
+```
