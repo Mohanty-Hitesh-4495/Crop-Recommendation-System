@@ -1,4 +1,4 @@
-# FarmSathi: Smart Agricultural Recommendation System 🌾
+# FarmSathi: Smart Agricultural Recommendation System
 
 FarmSathi is an AI-powered agricultural assistant designed to support farmers in making informed decisions. The system provides comprehensive recommendations for crops, fertilizers, pesticides, and crop disease management, ensuring better productivity and sustainable farming practices.<br>
 FarmSathi integrates advanced machine learning models to deliver the following features:
