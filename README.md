@@ -27,12 +27,10 @@ Upcoming Features:
 git clone https://github.com/Mohanty-Hitesh-4495/Crop-Recommendation-System.git
 ```
 #### 2. Install the required dependencies from requirements.txt.
-bash
-```
+```bash
 pip install -r requirements.txt
 ```
 #### 3. Run the Streamlit application:
-bash
-```
+```bash
 streamlit run app.py
 ```
