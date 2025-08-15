@@ -1,0 +1,21 @@
+10-26-26:This is a balanced fertilizer containing Nitrogen (10%), Phosphorus (26%), and Potassium (26%). It is ideal for crops that need equal amounts of phosphorus and potassium during their growth stages. It enhances root development and improves flowering and fruiting.
+
+14-35-14:This fertilizer has Nitrogen (14%), Phosphorus (35%), and Potassium (14%). It is suitable for crops in their early growth stages, promoting root establishment and vigorous plant growth.
+
+17-17-17:A balanced fertilizer with equal proportions of Nitrogen, Phosphorus, and Potassium (17% each). It is used for general crop maintenance and ensures balanced nutrition for healthy plant development.
+
+20-20:This refers to a mix containing 20% Nitrogen and 20% Potassium. It is used where potassium is a primary requirement, ensuring stronger stems and better disease resistance.
+
+28-28:This fertilizer contains Nitrogen (28%) and Potassium (28%). It is beneficial for crops that need significant potassium for fruit and grain filling.
+
+Ammonium Sulphate:This fertilizer is a rich source of Nitrogen and Sulfur, essential for protein synthesis in crops. It is especially effective for paddy, sugarcane, and horticultural crops, enhancing green foliage and yield.
+
+DAP (Diammonium Phosphate):DAP is a highly concentrated fertilizer containing Nitrogen (18%) and Phosphorus (46%). It promotes root development and is suitable for pre-sowing application in cereals, pulses, and oilseeds.
+
+MOP (Muriate of Potash):MOP provides Potassium (60%) and is essential for improving fruit quality, color, and shelf life. It is used widely in fruits, vegetables, and cereals.
+
+NPK (Nitrogen, Phosphorus, Potassium):NPK fertilizers provide a balanced combination of Nitrogen, Phosphorus, and Potassium in various ratios, depending on crop requirements. They enhance overall plant health, productivity, and stress resistance.
+
+SSP (Single Super Phosphate):SSP contains 16% Phosphorus and is enriched with Sulfur. It is ideal for leguminous crops, improving soil fertility and promoting root nodulation in pulses.
+
+Urea:Urea is the most concentrated solid Nitrogen fertilizer (46%). It is widely used to promote vegetative growth and increase the green canopy of crops.
