@@ -1,149 +1,118 @@
+# from azure_ocr_implentation import main
 import streamlit as st
-import pickle
-import pandas as pd
-import numpy as np  # Import numpy for numerical operations
-from PIL import Image  
-import matplotlib.pyplot as plt
-
-# Load the saved model
-with open('models/crop_recommendation_model.pkl', 'rb') as file:
-    model = pickle.load(file)
-
-# Load the dataset
-data = pd.read_csv('dataset/Crop_recommendation.csv') 
-
-# Load crop summaries from a text file
-crop_summaries = {}
-with open('docs/crop_summaries.txt', 'r') as f:
-    for line in f:
-        crop, summary = line.split(': ', 1)
-        crop_summaries[crop] = summary.strip()
-
-# Initialize session state variable for page navigation if not already initialized
-if 'page' not in st.session_state:
-    st.session_state.page = "Crop Recommendation"  # Default page
+from PIL import Image
+from crop_recommendation import crop_recommendation_page
+from crop_statistics import crop_statistics_page
+from fertilizer_recommendation import fertilizer_recommendation_page
+from streamlit_option_menu import option_menu
 
 # Main heading for the application
 st.markdown("<h1 style='font-size: 36px;'>🌾 FarmSathi: फसल का Perfect Match 🌾</h1>", unsafe_allow_html=True)
-st.write("<h2 style='font-size: 26px;'> Your trusted guide for choosing the right crop based on soil, climate, and more!</h2>", unsafe_allow_html=True)
+st.write("<h2 style='font-size: 26px;'>Your trusted guide for choosing the right crop based on soil, climate, and more!</h2>", unsafe_allow_html=True)
 
-# Load the image
-logo_image = Image.open('assets/farmsathi logo.png')  # Ensure this path is correct
+# Sidebar configuration
+logo_image = Image.open("assets/farmsathi_logo.png")
 
-# Sidebar for page navigation and logo
+# Create centered logo using columns
+col1, col2, col3 = st.sidebar.columns([1, 2, 1])
+with col2:
+    st.image(logo_image, width=200)
+
+# Comprehensive CSS to center the logo - multiple selectors for better compatibility
+st.sidebar.markdown("""
+    <style>
+        /* Target all possible image containers in sidebar */
+        div[data-testid="stSidebar"] .stImage {
+            text-align: center;
+        }
+        
+        div[data-testid="stSidebar"] .stImage > div {
+            display: flex;
+            justify-content: center;
+        }
+        
+        div[data-testid="stSidebar"] img {
+            display: block;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        
+        /* Force center alignment for sidebar content */
+        .css-1d391kg, .css-ng1t4o, .css-1outpf7 {
+            text-align: center;
+        }
+        
+        /* Additional fallback selectors */
+        [data-testid="stSidebar"] [data-testid="stImage"] {
+            text-align: center;
+        }
+        
+        [data-testid="stSidebar"] [data-testid="stImage"] > div {
+            justify-content: center;
+            display: flex;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
+st.sidebar.markdown("<h2>Main Menu</h2>", unsafe_allow_html=True)
+
+# Sidebar menu
 with st.sidebar:
-    # Display the image using st.image
-    st.image(logo_image, width=150)
-    st.title("FarmSathi")
-    # Navigation buttons
-    if st.button("Crop Statistics"):
-        st.session_state.page = "Crop Statistics"
-    if st.button("Crop Recommendation"):
-        st.session_state.page = "Crop Recommendation"
+    selected = option_menu(
+        "",
+        ["Crop Recommendation", "Crop Statistics", "Fertilizer Recommendation", "Upload Report","About"],
+        icons=["list", "bar-chart", "list-task", "upload","info-circle"],
+        menu_icon="cast",
+        default_index=0,
+    )
 
-# Crop Recommendation Page
-if st.session_state.page == "Crop Recommendation":
-    st.header("Crop Recommendation System")
-    st.write("Provide soil and climate details to get a crop recommendation:")
+# Navigation logic
+if selected == "Crop Recommendation":
+    crop_recommendation_page()
+elif selected == "Crop Statistics":
+    crop_statistics_page()
+elif selected == "Fertilizer Recommendation":
+    fertilizer_recommendation_page()
+# elif selected == "Upload Report":
+#     main()
+elif selected == "About":
+    st.markdown(
+        """
+        ### About FarmSathi 🌾
+        **FarmSathi** is a state-of-the-art digital platform designed to empower farmers by leveraging the power of technology. Our mission is to provide intelligent solutions to optimize farming practices, boost productivity, and promote sustainable agriculture.
 
-    # User inputs for soil nutrients, climate, etc.
-    nitrogen = st.number_input("Nitrogen level in soil")
-    phosphorus = st.number_input("Phosphorus level in soil")
-    potassium = st.number_input("Potassium level in soil")
-    temperature = st.number_input("Temperature (°C)")
-    humidity = st.number_input("Humidity (%)")
-    ph = st.number_input("pH of soil")
-    rainfall = st.number_input("Rainfall (mm)")
+        #### Why Choose FarmSathi?
+        - **Precision Farming**: Make informed decisions with data-driven recommendations tailored to your soil and crop needs.
+        - **User-Friendly Interface**: A simple and intuitive interface ensures ease of use for farmers of all technical backgrounds.
+        - **Advanced AI & ML Models**: Backed by cutting-edge artificial intelligence, our models offer reliable recommendations.
+        - **Comprehensive Features**:
+          - Crop recommendation based on soil nutrients, weather conditions, and other factors.
+          - Fertilizer recommendation to ensure healthy crops and sustainable farming.
+          - In-depth crop statistics to monitor performance and identify trends.
 
-    # Prediction button
-    if st.button("Recommend Crop"):
-        # Make prediction with user input values
-        input_data = [[nitrogen, phosphorus, potassium, temperature, humidity, ph, rainfall]]
-        prediction = model.predict(input_data)
-        st.write(f"Recommended Crop: 🌱 {prediction[0]} 🌱")
-
-# Crop Statistics Page
-elif st.session_state.page == "Crop Statistics":
-    st.header("Crop Statistics")
-    st.write("Explore Crop-Specific Nutrient and Climate Requirements")
-
-    # Crop selection
-    selected_crop = st.selectbox("Select a Crop", options=list(data['Crop'].unique()))
-
-    # Display crop-specific statistics
-    if selected_crop:
-        x = data[data['Crop'] == selected_crop]
-
-        st.write(f"### Nutrient and Climate Statistics for {selected_crop}")
-
-        # Collecting data for plotting
-        min_values = [
-            x['Nitrogen'].min(),
-            x['Phosphorus'].min(),
-            x['Potassium'].min(),
-            x['Temperature'].min(),
-            x['Humidity'].min(),
-            x['pH_Value'].min(),
-            x['Rainfall'].min()
-        ]
+        #### Key Features:
+        1. **Crop Recommendation System**:
+           - Suggests the most suitable crop for your soil type and environmental conditions.
+           - Helps improve yield and minimize resource wastage.
         
-        avg_values = [
-            x['Nitrogen'].mean(),
-            x['Phosphorus'].mean(),
-            x['Potassium'].mean(),
-            x['Temperature'].mean(),
-            x['Humidity'].mean(),
-            x['pH_Value'].mean(),
-            x['Rainfall'].mean()
-        ]
-        
-        max_values = [
-            x['Nitrogen'].max(),
-            x['Phosphorus'].max(),
-            x['Potassium'].max(),
-            x['Temperature'].max(),
-            x['Humidity'].max(),
-            x['pH_Value'].max(),
-            x['Rainfall'].max()
-        ]
-        
-        categories = ['Nitrogen', 'Phosphorus', 'Potassium', 'Temperature', 'Humidity', 'pH', 'Rainfall']
+        2. **Fertilizer Recommendation System**:
+           - Recommends fertilizers based on your soil's nutrient profile and crop type.
+           - Ensures balanced nutrient supply for optimal growth.
 
-        # Display textual statistics
-        st.subheader("Statistical Overview")
-        stats_df = pd.DataFrame({
-            'Parameter': categories,
-            'Minimum': min_values,
-            'Average': avg_values,
-            'Maximum': max_values
-        })
-        
-        # Create two columns for side-by-side display
-        col1, col2 = st.columns([2, 1])  # Adjust column ratios as needed
-        
-        with col1:
-            st.write(stats_df)
+        3. **Crop Statistics Dashboard**:
+           - Analyze historical trends and monitor crop performance.
+           - Helps in strategic decision-making and resource allocation.
 
-        with col2:
-            # Crop summary based on the selected crop from the loaded dictionary
-            crop_summary = crop_summaries.get(selected_crop, "No summary available for this crop.")
-            st.subheader(f"Summary for {selected_crop}")
-            st.write(crop_summary)
+        4. **Accessibility**:
+           - Supports multilingual features to cater to farmers across regions.
+           - Available on web and mobile platforms for easy access.
 
-        # Plotting in a single subplot
-        x = np.arange(len(categories))  # the label locations
-        width = 0.25  # the width of the bars
+        #### Our Vision:
+        At **FarmSathi**, we aim to revolutionize farming by integrating technology with traditional practices. Our vision is to create a future where every farmer has access to the tools and knowledge required for sustainable and profitable agriculture.
 
-        fig, ax = plt.subplots(figsize=(10, 6))
-        bars1 = ax.bar(x - width, min_values, width, label='Minimum', color='green')
-        bars2 = ax.bar(x, avg_values, width, label='Average', color='orange')
-        bars3 = ax.bar(x + width, max_values, width, label='Maximum', color='red')
+        #### Join Us!
+        Be a part of the FarmSathi family and take the first step toward smarter farming. Together, we can build a sustainable future and support the backbone of our economy – **our farmers**. 🌱
 
-        # Add some text for labels, title and custom x-axis tick labels, etc.
-        ax.set_ylabel('Values')
-        ax.set_title(f'{selected_crop} Nutrient and Climate Requirements')
-        ax.set_xticks(x)
-        ax.set_xticklabels(categories)
-        ax.legend()
-
-        st.pyplot(fig)
+        #### 🌟 Empowering Farmers, Growing Together 🌟
+        """
+    )
