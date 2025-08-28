@@ -7,7 +7,7 @@ ipykernel
 smote==0.1
 seaborn==0.13.2
 imbalanced-learn==0.14.0
-
+tensorflow==2.20.0
 xgboost==3.0.4
 lightgbm==4.6.0
 catboost==1.2.8
