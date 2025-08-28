@@ -1,0 +1,181 @@
+{
+  "dataset_info": {
+    "total_samples": 2200,
+    "num_features": 7,
+    "num_classes": 22,
+    "feature_names": [
+      "Nitrogen",
+      "Phosphorus",
+      "Potassium",
+      "Temperature",
+      "Humidity",
+      "pH_Value",
+      "Rainfall"
+    ],
+    "class_names": [
+      "Apple",
+      "Banana",
+      "Blackgram",
+      "ChickPea",
+      "Coconut",
+      "Coffee",
+      "Cotton",
+      "Grapes",
+      "Jute",
+      "KidneyBeans",
+      "Lentil",
+      "Maize",
+      "Mango",
+      "MothBeans",
+      "MungBean",
+      "Muskmelon",
+      "Orange",
+      "Papaya",
+      "PigeonPeas",
+      "Pomegranate",
+      "Rice",
+      "Watermelon"
+    ]
+  },
+  "model_results": {
+    "classical_ml": [
+      {
+        "Model": "Logistic Regression",
+        "Test_Accuracy": 0.9690909090909091,
+        "CV_Mean": 0.9713636363636363,
+        "CV_Std": 0.0018181818181818078,
+        "CV_Scores": [
+          0.9704545454545455,
+          0.9704545454545455,
+          0.9704545454545455,
+          0.975,
+          0.9704545454545455
+        ]
+      },
+      {
+        "Model": "Random Forest",
+        "Test_Accuracy": 0.9945454545454545,
+        "CV_Mean": 0.9954545454545455,
+        "CV_Std": 0.0024896479886598517,
+        "CV_Scores": [
+          0.9954545454545455,
+          0.9931818181818182,
+          1.0,
+          0.9954545454545455,
+          0.9931818181818182
+        ]
+      },
+      {
+        "Model": "Decision Tree",
+        "Test_Accuracy": 0.9690909090909091,
+        "CV_Mean": 0.985,
+        "CV_Std": 0.006680426571226844,
+        "CV_Scores": [
+          0.9863636363636363,
+          0.990909090909091,
+          0.9772727272727273,
+          0.9772727272727273,
+          0.9931818181818182
+        ]
+      },
+      {
+        "Model": "Naive Bayes",
+        "Test_Accuracy": 0.9945454545454545,
+        "CV_Mean": 0.9945454545454545,
+        "CV_Std": 0.0018181818181818132,
+        "CV_Scores": [
+          0.9931818181818182,
+          0.9954545454545455,
+          0.9977272727272727,
+          0.9931818181818182,
+          0.9931818181818182
+        ]
+      },
+      {
+        "Model": "K-Nearest Neighbors",
+        "Test_Accuracy": 0.9763636363636363,
+        "CV_Mean": 0.9713636363636363,
+        "CV_Std": 0.006833316535624032,
+        "CV_Scores": [
+          0.9704545454545455,
+          0.975,
+          0.9795454545454545,
+          0.9590909090909091,
+          0.9727272727272728
+        ]
+      },
+      {
+        "Model": "Support Vector Machine",
+        "Test_Accuracy": 0.990909090909091,
+        "CV_Mean": 0.9836363636363638,
+        "CV_Std": 0.004406981688560313,
+        "CV_Scores": [
+          0.9818181818181818,
+          0.9840909090909091,
+          0.990909090909091,
+          0.9772727272727273,
+          0.9840909090909091
+        ]
+      },
+      {
+        "Model": "Gradient Boosting",
+        "Test_Accuracy": 0.9890909090909091,
+        "CV_Mean": 0.9909090909090909,
+        "CV_Std": 0.004545454545454519,
+        "CV_Scores": [
+          0.9886363636363636,
+          0.9840909090909091,
+          0.9977272727272727,
+          0.990909090909091,
+          0.9931818181818182
+        ]
+      },
+      {
+        "Model": "XGBoost",
+        "Test_Accuracy": 0.9872727272727273,
+        "CV_Mean": 0.9927272727272726,
+        "CV_Std": 0.0030151134457776117,
+        "CV_Scores": [
+          0.9931818181818182,
+          0.9886363636363636,
+          0.990909090909091,
+          0.9977272727272727,
+          0.9931818181818182
+        ]
+      }
+    ],
+    "neural_network": {
+      "Model": "Artificial Neural Network",
+      "Test_Accuracy": 0.9872727394104004,
+      "Final_Train_Accuracy": 0.9651514887809753,
+      "Final_Val_Accuracy": 0.9757575988769531,
+      "Training_Epochs": 50
+    }
+  },
+  "best_models": {
+    "overall_best": {
+      "name": "Random Forest",
+      "type": "Classical ML",
+      "accuracy": 0.9945454545454545
+    },
+    "best_classical_ml": {
+      "name": "Random Forest",
+      "accuracy": 0.9945454545454545
+    },
+    "neural_network": {
+      "accuracy": 0.9872727394104004,
+      "epochs_trained": 50
+    }
+  },
+  "training_config": {
+    "test_size": 0.25,
+    "random_state": 42,
+    "cv_folds": 5,
+    "neural_network_params": {
+      "optimizer": "adam",
+      "loss": "categorical_crossentropy",
+      "batch_size": 32,
+      "max_epochs": 100
+    }
+  }
+}
